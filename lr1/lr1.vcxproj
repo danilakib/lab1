@@ -130,14 +130,18 @@
     <ClCompile Include="Base.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Keeper.cpp" />
     <ClCompile Include="lr1.cpp" />
     <ClCompile Include="Stationery.cpp" />
+    <ClCompile Include="Textbook.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="Keeper.h" />
     <ClInclude Include="Stationery.h" />
+    <ClInclude Include="Textbook.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

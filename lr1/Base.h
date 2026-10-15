@@ -4,6 +4,7 @@
 
 #include <iosfwd>
 
+// Общая часть любого товара магазина.
 class Base {
 private:
     double price;
@@ -19,7 +20,9 @@ public:
 
     virtual const char* getType() const = 0;
     virtual void input() = 0;
+    virtual void edit() = 0;
     virtual void print() const = 0;
+    virtual Base* clone() const = 0;
 };
 
 #endif

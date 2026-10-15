@@ -12,7 +12,7 @@ private:
 public:
     Stationery();
     Stationery(const std::string& kind, const std::string& color,
-        const std::string& purpose, double price);
+               const std::string& purpose, double price);
     Stationery(const Stationery& other);
     ~Stationery() override;
 
@@ -25,7 +25,10 @@ public:
 
     const char* getType() const override;
     void input() override;
+    void edit() override;
     void print() const override;
+    Base* clone() const override;
 };
 
 #endif
+

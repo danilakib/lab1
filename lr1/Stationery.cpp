@@ -37,8 +37,24 @@ void Stationery::input() {
     setPrice(readPrice("Стоимость: "));
 }
 
+void Stationery::edit() {
+    std::cout << "1. Тип канцелярии\n2. Цвет\n3. Назначение\n"
+        "4. Стоимость\n5. Все поля\n0. Назад\n";
+    switch (readInt("Поле: ")) {
+    case 0: break;
+    case 1: setKind(readText("Тип канцелярии: ")); break;
+    case 2: setColor(readText("Цвет: ")); break;
+    case 3: setPurpose(readText("Назначение: ")); break;
+    case 4: setPrice(readPrice("Стоимость: ")); break;
+    case 5: input(); break;
+    default: throw std::out_of_range("Нет такого поля.");
+    }
+}
+
 void Stationery::print() const {
     std::cout << "Канцелярия: " << getKind() << "\nЦвет: " << getColor()
         << "\nНазначение: " << getPurpose()
         << "\nСтоимость: " << getPrice() << "\n";
 }
+
+Base* Stationery::clone() const { return new Stationery(*this); }

@@ -33,7 +33,9 @@ public:
 
     const char* getType() const override;
     void input() override;
+    void edit() override;
     void print() const override;
+    Base* clone() const override;
 };
 
 #endif

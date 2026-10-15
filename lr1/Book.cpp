@@ -51,9 +51,28 @@ void Book::input() {
     setPrice(readPrice("Стоимость: "));
 }
 
+void Book::edit() {
+    std::cout << "1. Название\n2. Автор\n3. Год выпуска\n4. Аннотация\n"
+        "5. Жанр\n6. Страницы\n7. Стоимость\n8. Все поля\n0. Назад\n";
+    switch (readInt("Поле: ")) {
+    case 0: break;
+    case 1: setTitle(readText("Название: ")); break;
+    case 2: setAuthor(readText("Автор: ")); break;
+    case 3: setYear(readInt("Год выпуска: ")); break;
+    case 4: setAnnotation(readText("Аннотация: ")); break;
+    case 5: setGenre(readText("Жанр: ")); break;
+    case 6: setPages(readInt("Страницы: ")); break;
+    case 7: setPrice(readPrice("Стоимость: ")); break;
+    case 8: input(); break;
+    default: throw std::out_of_range("Нет такого поля.");
+    }
+}
+
 void Book::print() const {
     std::cout << "Книга: " << getTitle() << "\nАвтор: " << getAuthor()
         << "\nГод: " << getYear() << "\nАннотация: " << getAnnotation()
         << "\nЖанр: " << getGenre() << "\nСтраницы: " << getPages()
         << "\nСтоимость: " << getPrice() << "\n";
 }
+
+Base* Book::clone() const { return new Book(*this); }
